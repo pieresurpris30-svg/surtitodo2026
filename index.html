@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- GTM Ready Placeholders -->
+<script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+i:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-XXXXXXX');
+    </script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#221b00",
+                        "on-primary-fixed-variant": "#544600",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-secondary-fixed-variant": "#474746",
+                        "surface": "#131313",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "primary-container": "#ffd700",
+                        "surface-container-lowest": "#0e0e0e",
+                        "inverse-on-surface": "#303030",
+                        "on-error": "#690005",
+                        "on-tertiary": "#2f3131",
+                        "surface-tint": "#e9c400",
+                        "error": "#ffb4ab",
+                        "surface-bright": "#393939",
+                        "on-secondary-container": "#b7b5b4",
+                        "tertiary-fixed": "#e2e2e2",
+                        "secondary-container": "#474746",
+                        "on-surface": "#e4e2e1",
+                        "on-primary-container": "#705e00",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-secondary": "#313030",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-tertiary-container": "#5e5f5f",
+                        "surface-container": "#1f2020",
+                        "surface-variant": "#353535",
+                        "primary": "#fff6df",
+                        "tertiary": "#f6f6f6",
+                        "surface-container-high": "#2a2a2a",
+                        "background": "#131313",
+                        "on-background": "#e4e2e1",
+                        "tertiary-container": "#dadada",
+                        "surface-dim": "#131313",
+                        "on-primary": "#3a3000",
+                        "on-surface-variant": "#d0c6ab",
+                        "outline-variant": "#4d4732",
+                        "secondary": "#c8c6c5",
+                        "inverse-primary": "#705d00",
+                        "inverse-surface": "#e4e2e1",
+                        "surface-container-highest": "#353535",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#e9c400",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "primary-fixed": "#ffe16d",
+                        "outline": "#999077",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-container-low": "#1b1c1c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "lg": "3rem",
+                        "margin": "2rem",
+                        "md": "1.5rem",
+                        "base": "1rem",
+                        "gutter": "1.5rem",
+                        "xl": "5rem",
+                        "xs": "0.25rem",
+                        "sm": "0.5rem"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["3rem", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-md": ["2rem", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "body-lg": ["1.25rem", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-bold": ["0.875rem", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-xl": ["4.5rem", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-md": ["1rem", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        :root { font-size: 16px; }
+        body { background-color: #131313; font-family: 'Inter', sans-serif; color: #e4e2e1; }
+        .industrial-shadow { box-shadow: 0 4px 0 0 rgba(0,0,0,0.4); }
+        .active-nav-border { border-bottom: 2px solid #FFD700; }
+        .skeleton { background: linear-gradient(90deg, #1A1A1A 25%, #2D2D2D 50%, #1A1A1A 75%); background-size: 200% 100%; animation: loading 1.5s infinite; }
+        @keyframes loading { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+<!-- GTM Noscript Placeholder -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-8 h-20 bg-[#1A1A1A] border-b-2 border-[#FFD700] shadow-[0_4px_0_0_rgba(0,0,0,0.4)]">
+<div class="text-2xl font-black text-[#FFD700] tracking-tighter">SURTITODO 2026</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="font-['Inter'] uppercase tracking-wider font-bold text-sm text-[#FFD700] border-b-2 border-[#FFD700] pb-1" href="#">Stationery</a>
+<a class="font-['Inter'] uppercase tracking-wider font-bold text-sm text-white/70 hover:text-white transition-colors duration-200" href="#">Hardware</a>
+<a class="font-['Inter'] uppercase tracking-wider font-bold text-sm text-white/70 hover:text-white transition-colors duration-200" href="#">Sachets</a>
+<a class="font-['Inter'] uppercase tracking-wider font-bold text-sm text-white/70 hover:text-white transition-colors duration-200" href="#">Benefits</a>
+</nav>
+<a class="bg-[#FFD700] text-[#1A1A1A] font-bold py-3 px-6 industrial-shadow hover:translate-y-0.5 transition-all uppercase text-sm tracking-widest" href="https://wa.me/584121522808" target="_blank">
+            COMPRE AQUÍ
+        </a>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[819px] flex items-center px-8 md:px-20 overflow-hidden bg-[#131313]">
+<div class="absolute inset-0 z-0 opacity-40">
+<div class="w-full h-full bg-[url('image-industrial-warehouse-hero')] bg-cover bg-center" data-alt="A massive industrial warehouse setting with high-reaching metal racking systems and focused overhead yellow safety lighting. The atmosphere is professional and efficient, with a palette dominated by deep shadows and vibrant high-visibility yellow structural accents. The scene conveys reliability and professional-grade logistical power in a modern dark-mode aesthetic."></div>
+</div>
+<div class="relative z-10 max-w-4xl">
+<h1 class="font-display-xl text-display-xl text-white mb-6 leading-[1.1]">
+                    Deja de esperar al vendedor que <span class="text-[#FFD700]">nunca llega.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-secondary mb-10 max-w-2xl">
+                    El control de tu stock en un clic. Distribución industrial directa, sin esperas, sin intermediarios, 100% online.
+                </p>
+<div class="flex flex-wrap gap-4">
+<a class="bg-[#FFD700] text-[#1A1A1A] font-headline-md text-[1.25rem] px-8 py-4 industrial-shadow font-bold hover:brightness-90 transition-all flex items-center gap-3" href="https://wa.me/584121522808">
+                        ABRIR CATÁLOGO <span class="material-symbols-outlined">trending_flat</span>
+</a>
+<button class="border border-white/20 text-white font-headline-md text-[1.25rem] px-8 py-4 hover:bg-white/5 transition-all">
+                        VER PRODUCTOS
+                    </button>
+</div>
+</div>
+</section>
+<!-- Propuesta de Valor -->
+<section class="py-24 px-8 md:px-20 bg-[#1A1A1A] border-y border-[#3D3D3D]">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="flex flex-col gap-4 border-l-4 border-[#FFD700] pl-6">
+<span class="material-symbols-outlined text-[#FFD700] text-5xl">inventory_2</span>
+<h3 class="font-headline-md text-headline-md text-white">100% Online</h3>
+<p class="font-body-md text-body-md text-secondary">Plataforma disponible 24/7 para que realices tus pedidos cuando tu negocio lo necesite.</p>
+</div>
+<div class="flex flex-col gap-4 border-l-4 border-[#FFD700] pl-6">
+<span class="material-symbols-outlined text-[#FFD700] text-5xl">local_shipping</span>
+<h3 class="font-headline-md text-headline-md text-white">Despacho Directo</h3>
+<p class="font-body-md text-body-md text-secondary">Logística optimizada para entregas en tiempo récord directo a tu local comercial o almacén.</p>
+</div>
+<div class="flex flex-col gap-4 border-l-4 border-[#FFD700] pl-6">
+<span class="material-symbols-outlined text-[#FFD700] text-5xl">handshake</span>
+<h3 class="font-headline-md text-headline-md text-white">Sin Intermediarios</h3>
+<p class="font-body-md text-body-md text-secondary">Eliminamos costos innecesarios garantizando el mejor precio mayorista del mercado industrial.</p>
+</div>
+</div>
+</section>
+<!-- Grid de Productos (Bento Layout) -->
+<section class="py-xl px-8 md:px-20 max-w-7xl mx-auto">
+<div class="mb-12 flex justify-between items-end">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-white">STOCK EN TIEMPO REAL</h2>
+<p class="font-body-md text-body-md text-[#FFD700] font-bold tracking-widest uppercase">Catálogo Mayorista Seleccionado</p>
+</div>
+<div class="hidden md:block">
+<span class="text-xs text-white/40 uppercase tracking-[0.2em]">Última actualización: Hace 5 minutos</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[800px]">
+<!-- Categoría Papelería -->
+<div class="md:col-span-8 bg-[#2D2D2D] border border-[#3D3D3D] p-8 flex flex-col industrial-shadow relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4">
+<span class="bg-[#FFD700] text-[#1A1A1A] px-3 py-1 text-xs font-black uppercase">Stationery</span>
+</div>
+<div class="mt-auto z-10">
+<h3 class="font-display-xl text-4xl text-white mb-2">Papelería</h3>
+<p class="text-secondary max-w-md mb-6">Suministros de oficina y escolares con alta rotación. Calidad industrial certificada.</p>
+<!-- Skeleton Loaders -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="h-24 bg-[#1A1A1A] border border-white/5 p-4 flex flex-col justify-between">
+<div class="skeleton h-4 w-3/4"></div>
+<div class="skeleton h-3 w-1/2"></div>
+</div>
+<div class="h-24 bg-[#1A1A1A] border border-white/5 p-4 flex flex-col justify-between">
+<div class="skeleton h-4 w-3/4"></div>
+<div class="skeleton h-3 w-1/2"></div>
+</div>
+<div class="h-24 bg-[#1A1A1A] border border-white/5 p-4 flex flex-col justify-between">
+<div class="skeleton h-4 w-3/4"></div>
+<div class="skeleton h-3 w-1/2"></div>
+</div>
+<div class="h-24 bg-[#1A1A1A] border border-white/5 p-4 flex flex-col justify-between">
+<div class="skeleton h-4 w-3/4"></div>
+<div class="skeleton h-3 w-1/2"></div>
+</div>
+</div>
+</div>
+<div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="A top-down view of organized professional stationery supplies including high-grade paper stacks, precision writing instruments, and industrial binding materials. The composition is clean and geometric, using a dark-mode professional aesthetic with high contrast and sharp focus on textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB10wFoF5R0DFA3gH9CtEThavGa_5OkQWkcCNXQk5Qn5sA71mP_Xh5ElvuFoEA3iNWeq5D57ixuKMR8AviJv6L2fle05BcFUarLF-f-m9nIzlu4Jv04ENeHOveimrAyIbXIv2laeAmzLX4DCD2ZnAlBBwMcmSHqtO_wWRIk4iASM2RUCNxkQWtxFTsTy393PoUAPGmGwRQmlMgfzgU247mmz6dAAz0SYDAfpuoV06iHLr9WGBQNyHd7XjIrHvMv3LEE0OCUs76YQoqv"/>
+</div>
+</div>
+<!-- Categoría Quincallería -->
+<div class="md:col-span-4 bg-[#2D2D2D] border border-[#3D3D3D] p-8 flex flex-col industrial-shadow group">
+<div class="mb-8">
+<h3 class="font-headline-md text-headline-md text-white">Hardware</h3>
+<p class="text-secondary text-sm">Herramientas y ferretería ligera.</p>
+</div>
+<div class="flex-grow space-y-4">
+<div class="flex items-center gap-4 bg-[#1A1A1A] p-4 border-l-2 border-[#FFD700]">
+<div class="skeleton w-12 h-12 shrink-0"></div>
+<div class="flex-grow">
+<div class="skeleton h-4 w-full mb-2"></div>
+<div class="skeleton h-3 w-1/2"></div>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-[#1A1A1A] p-4">
+<div class="skeleton w-12 h-12 shrink-0"></div>
+<div class="flex-grow">
+<div class="skeleton h-4 w-full mb-2"></div>
+<div class="skeleton h-3 w-1/2"></div>
+</div>
+</div>
+</div>
+<button class="mt-6 w-full py-3 border border-[#FFD700] text-[#FFD700] font-bold hover:bg-[#FFD700] hover:text-[#1A1A1A] transition-all uppercase text-xs tracking-tighter">Explorar Quincallería</button>
+</div>
+<!-- Categoría Sachet -->
+<div class="md:col-span-12 bg-[#2D2D2D] border border-[#3D3D3D] p-8 flex flex-col md:flex-row justify-between items-center industrial-shadow overflow-hidden relative">
+<div class="relative z-10 md:w-1/2">
+<span class="text-[#FFD700] font-black tracking-widest text-xs uppercase mb-2 block">Alta Demanda</span>
+<h3 class="font-headline-lg text-headline-lg text-white mb-4">Consumo en Sachet</h3>
+<p class="text-secondary font-body-md mb-8">Productos de higiene y alimentos en formato individual para distribución masiva. Los mejores márgenes del sector minorista.</p>
+<a class="inline-flex items-center gap-4 text-white font-bold hover:text-[#FFD700] transition-colors" href="#">
+                            VER LISTADO COMPLETO <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="md:w-1/3 mt-8 md:mt-0 grid grid-cols-2 gap-4">
+<!-- Product Skeleton -->
+<div class="bg-[#1A1A1A] aspect-square p-4 flex flex-col gap-3">
+<div class="skeleton w-full h-2/3"></div>
+<div class="skeleton w-full h-3"></div>
+</div>
+<div class="bg-[#1A1A1A] aspect-square p-4 flex flex-col gap-3">
+<div class="skeleton w-full h-2/3"></div>
+<div class="skeleton w-full h-3"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Por qué somos diferentes -->
+<section class="py-24 bg-[#131313] border-t-4 border-[#FFD700]">
+<div class="max-w-7xl mx-auto px-8 md:px-20">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-white uppercase tracking-tighter">PEDIR POR WHATSAPP ES <span class="text-[#FFD700]">MEJOR</span></h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="bg-[#2D2D2D] p-8 border border-[#3D3D3D] industrial-shadow">
+<div class="text-[#FFD700] font-black text-6xl mb-4">01</div>
+<h4 class="text-white font-bold mb-2">RESPUESTA REAL</h4>
+<p class="text-xs text-secondary leading-relaxed">Sin bots complejos. Un asesor especializado atiende tu pedido de principio a fin.</p>
+</div>
+<div class="bg-[#2D2D2D] p-8 border border-[#3D3D3D] industrial-shadow">
+<div class="text-[#FFD700] font-black text-6xl mb-4">02</div>
+<h4 class="text-white font-bold mb-2">CATÁLOGO VIVO</h4>
+<p class="text-xs text-secondary leading-relaxed">Recibe fotos reales y estados de stock del almacén al instante.</p>
+</div>
+<div class="bg-[#2D2D2D] p-8 border border-[#3D3D3D] industrial-shadow">
+<div class="text-[#FFD700] font-black text-6xl mb-4">03</div>
+<h4 class="text-white font-bold mb-2">NEGOCIACIÓN</h4>
+<p class="text-xs text-secondary leading-relaxed">Precios por volumen dinámicos. Mientras más compras, mejores beneficios desbloqueas.</p>
+</div>
+<div class="bg-[#2D2D2D] p-8 border border-[#3D3D3D] industrial-shadow">
+<div class="text-[#FFD700] font-black text-6xl mb-4">04</div>
+<h4 class="text-white font-bold mb-2">CONFIRMACIÓN</h4>
+<p class="text-xs text-secondary leading-relaxed">Recibe tu factura y guía de despacho directamente en tu chat para control total.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Final Sticky/Bottom -->
+<section class="py-20 bg-[#FFD700] text-[#1A1A1A] text-center px-8">
+<h3 class="font-display-xl text-5xl mb-6">¿LISTO PARA SURTIR?</h3>
+<p class="font-headline-md mb-10 opacity-80">El mayorista industrial más rápido de la región.</p>
+<a class="inline-block bg-[#1A1A1A] text-[#FFD700] text-2xl font-black py-6 px-12 industrial-shadow hover:scale-105 transition-transform uppercase tracking-tighter" href="https://wa.me/584121522808" target="_blank">
+                COMPRE AQUÍ POR WHATSAPP
+            </a>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1A1A1A] border-t-4 border-[#2D2D2D]">
+<div class="w-full py-12 px-8 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+<div class="space-y-6">
+<div class="text-[#FFD700] font-bold text-2xl tracking-tighter">SURTITODO 2026</div>
+<p class="text-gray-500 font-['Inter'] text-xs uppercase tracking-widest leading-loose max-w-md">
+                    Soluciones logísticas de grado industrial para comercios y empresas. Control total de stock y distribución directa sin esperas.
+                </p>
+<div class="flex gap-4">
+<a class="text-gray-500 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="text-gray-500 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">support_agent</span>
+</a>
+<a class="text-gray-500 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">local_post_office</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="flex flex-col gap-4">
+<span class="text-white font-black text-sm uppercase">Navegación</span>
+<nav class="flex flex-col gap-2">
+<a class="font-['Inter'] text-xs text-gray-500 hover:text-white transition-colors uppercase" href="#">Terms of Service</a>
+<a class="font-['Inter'] text-xs text-gray-500 hover:text-white transition-colors uppercase" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-xs text-gray-500 hover:text-white transition-colors uppercase" href="#">GTM Settings</a>
+<a class="font-['Inter'] text-xs text-gray-500 hover:text-white transition-colors uppercase" href="#">Contact Support</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-white font-black text-sm uppercase">Ubicación</span>
+<div class="text-xs text-gray-500 font-mono">
+                        HQ-VENEZUELA-01<br/>
+                        LOGISTICS HUB A-4<br/>
+                        INDUSTRIAL ZONE
+                    </div>
+<div class="mt-4 pt-4 border-t border-[#3D3D3D]">
+<span class="text-[#FFD700] text-[10px] font-bold uppercase tracking-[0.3em]">© 2024 SURTITODO 2026. INDUSTRIAL GRADE LOGISTICS.</span>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full py-6 px-8 border-t border-[#3D3D3D] text-center">
+<span class="font-['Inter'] text-xs text-gray-500 uppercase tracking-widest">© 2024 SURTITODO 2026. INDUSTRIAL GRADE LOGISTICS.</span>
+</div>
+</footer>
+<!-- Fixed Maestro WhatsApp Button (Persistent) -->
+<a class="fixed bottom-8 right-8 z-[100] bg-[#FFD700] text-[#1A1A1A] font-black px-6 py-4 industrial-shadow hover:scale-105 active:translate-y-1 transition-all flex items-center gap-3" href="https://wa.me/584121522808" target="_blank">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span class="uppercase tracking-tighter">COMPRE AQUÍ</span>
+</a>
+</body></html>
