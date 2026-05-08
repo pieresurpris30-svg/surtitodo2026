@@ -356,4 +356,21 @@
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
 <span class="uppercase tracking-tighter">COMPRE AQUÍ</span>
 </a>
-</body></html>
+<script>
+  function capturarUbicacion() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          'event': 'location_to_stape',
+          'latitud': position.coords.latitude,
+          'longitud': position.coords.longitude
+        });
+      }, function(error) {
+        console.warn("Ubicación rechazada por el usuario.");
+      });
+    }
+  }
+  // Se ejecuta al cargar la página
+  window.onload = capturarUbicacion;
+</script></body></html>
